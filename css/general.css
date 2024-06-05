@@ -1,0 +1,10 @@
+/*Selector de tag*/
+html, body{
+    background-color: #d3a142;
+    height: 100%;
+}
+/*Selector de clase*/
+.title{
+    font-family: 'Karla';
+    font-weight: 800;
+}

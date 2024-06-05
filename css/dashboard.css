@@ -1,0 +1,204 @@
+.slider-bg{
+    background-color: #004123;
+}
+
+.card-container{
+    background-color: #004123;
+    border: none;
+}
+
+/*Selectores de agrupamiento*/
+.pub-title, .price, .other-tabs, .NOTIFICACION-HEAD{
+    font-family: 'Karla';
+    color: white;
+}
+
+.pub-desc, .btn-agregar-prod, .cantidad-producto, .customTooltip .introjs-tooltiptext, .NOTIFICACION{
+    font-family: 'Roboto Slab';
+}
+
+
+.pub-title{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.pub-desc{
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.price{
+    font-weight: 700;
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-agregar-prod{
+    background-color: #ffbb00;
+    color:black;
+}
+.btn-agregar-prod:hover{
+    background-color: #b98800;
+    color:white;
+    transition:0.2s;
+}
+.btn-agregar-prod:active{
+    background-color: #7c5b00 !important;
+    transform: scale(0.95);
+    transition:0.2s;
+}
+
+.topcontainer{
+    padding: 20px 0px;
+    background-color: #015d34;
+}
+
+.tabcontainer{
+    padding: 15px 0px;
+    background-color: #004e2b;
+}
+
+.sub-topcontainer{
+    padding: 18px 0px;
+    background-color: #004123;
+}
+
+@media screen and (max-width: 1210px) {
+    .pub-title {
+      font-size: 18px;
+    }
+    .pub-desc{
+        font-size: 14px;
+    }
+}
+
+.other-tabs{
+    font-size: 18px;
+    font-weight: 800;
+}
+.other-tabs:hover{
+    background-color: #00361d;
+    transition: 0.2s;
+}
+.other-tabs:focus{
+    background-color: #00361d;
+}
+
+.customTooltip * {
+    background-color: #015d34;
+    color: white;
+    font-size: 18px;
+}
+
+/*Selectores descendientes*/
+.customTooltip .introjs-tooltiptext {
+    text-align: center;
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: #ffbb00;
+}
+
+.customTooltip .introjs-disabled{
+    background-color: #7c5b00 !important;
+    color: rgb(80, 80, 80);
+}
+.customTooltip .introjs-disabled:hover{
+    background-color: #7c5b00 !important;
+    color: rgb(80, 80, 80);
+}
+.customTooltip .introjs-disabled:active{
+    background-color: #7c5b00 !important;
+    color: rgb(80, 80, 80);
+}
+
+.customTooltip .introjs-button{
+    background-color: #ffbb00;
+    font-weight: bold;
+    text-shadow: none;
+    border: none;
+}
+.customTooltip .introjs-button:hover{
+    background-color: #d49c00;
+    font-weight: bold;
+    text-shadow: none;
+    border: none;
+}
+.customTooltip .introjs-button:focus{
+    background-color: #d49c00;
+    font-weight: bold;
+    text-shadow: none;
+    border: none;
+}
+.customTooltip .introjs-button:active{
+    background-color: #ac7e00;
+    font-weight: bold;
+    text-shadow: none;
+    border: none;
+}
+
+.customTooltip .introjs-tooltipbuttons{
+    border-top-color: #00361d;
+}
+
+.customTooltip .introjs-arrow{
+    background-color: transparent;
+}
+
+.customTooltip .introjs-dontShowAgain{
+    background-color: #015d34;
+    text-align: center;
+}
+.customTooltip .introjs-dontShowAgain label{
+    background-color: #015d34;
+    color:white;
+}
+
+
+/*Selector adyacente*/
+.NOTIFICACION-HEAD + .NOTIFICACION{
+    background-color: #00361d !important;
+}
+
+
+.NOTIFICACION-HEAD{
+    background-color: #ffbb00 !important;
+    color: black;
+}
+
+.Sandwiches, .Ensaladas, .Bebidas, .Extras, .Populares{
+    transition: 0.2s;
+}
+
+
+/*Selectores de hijo*/
+.Populares > .card-container{
+    box-shadow: rgba(0, 0, 0,0.6) 5px 5px 12px;
+}
+
+.Sandwiches > .card-container, .Ensaladas > .card-container, .Bebidas > .card-container, .Extras > .card-container{
+    box-shadow: rgb(1, 131, 73,0.5) 3px 3px 12px;
+}
+
+
+.Sandwiches:hover, .Ensaladas:hover, .Bebidas:hover, .Extras:hover, .Populares:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+}
+
+/*#youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}*/

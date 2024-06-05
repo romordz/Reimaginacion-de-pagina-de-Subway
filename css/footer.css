@@ -1,0 +1,27 @@
+.footer{
+    background-color: #00140b;
+}
+
+.info{
+    font-size: 12px;
+}
+.littleinfo{
+    font-size: 9px;
+}
+
+.desc-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.description{
+    font-size: 15px;
+}
+
+.little-link{
+    color:#dee2e6;
+}
+
+.titlename-footer{
+    font-size: 40px;
+    font-family: 'Madimi One';
+}

@@ -1,0 +1,110 @@
+.custom-navbar{
+    background-color: #015D34;
+    color: white;
+    border-bottom: 1px solid #003f24;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.tabs, .subtab-item, .subtab-item-small, .subtab-item-disabled, .username, .titulo-carrito{
+    font-family: 'Karla';
+}
+
+.subtab-item, .subtab-item-disabled{
+    font-weight: 700;
+}
+
+.tabs, .username{
+    font-weight: 800;
+}
+
+.tabs{
+    font-size: 22px;
+}
+.tabs:hover{
+    background-color: #014d2a;
+    transition: 0.2s;
+}
+.tabs:focus{
+    background-color: #00361d;
+}
+@media screen and (max-width: 1150px) {
+    .tabs {
+      font-size: 18px;
+    }
+}
+
+.subtab{
+    background-color: #002213;
+}
+.subtab-item{
+    font-size: 18px;
+}
+.subtab-item:hover{
+    background-color: #004627;
+}
+.subtab-item-small{
+    font-size: 14px;
+    font-weight: 600;
+}
+.subtab-item-small:hover{
+    background-color: #004627;
+}
+.username{
+    font-size: 26px;
+}
+
+div > button.agregar-quitar {
+    border:none;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right:10px;
+    padding-left:10px;
+    font-size: 20px;
+    color: #c38f00;
+}
+div > button.agregar-quitar:hover {
+    font-size: 21px;
+    transition: 0.2s;
+    color: #ffbb00;
+}
+div > button.agregar-quitar:focus {
+    border:none;
+}
+
+
+/*Selectores de atributo*/
+div [Title = "agregar"] :active{
+    font-size: 19px;
+    transition: 0.1s;
+    color: #008604;
+}
+
+div [Title = "quitar"] :active{
+    font-size: 19px;
+    transition: 0.1s;
+    color: #b50000;
+}
+
+
+.cantidad-producto{
+    font-size: 25px;
+}
+
+.titulo-carrito{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+#ProductList{
+    margin: 0px 20px;
+}
+
+.Producto{
+    transition: 0.2s;
+}
+.Producto:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+}
