@@ -1,0 +1,70 @@
+.fullpage{
+    height: 100vh;
+    overflow: auto;
+}
+
+.login-card{
+    box-shadow: 6px 6px 10px black;
+    background-color: #015d34;
+    border: none;
+    width: 500px;
+}
+
+.bigger-card{
+    box-shadow: 6px 6px 10px black;
+    background-color: #015d34;
+    border: none;
+    width: 800px;
+}
+
+.extend-padding{
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.custom-inputs{
+    border: solid 1px #e9cf3e;
+    background-color: #00140b;
+    height: 50px;
+    font-size: 22px;
+}
+.custom-inputs:focus{
+    background-color: #00140b;
+    border-color: #e9cf3e;
+    box-shadow: 0 0 12px #e9cf3e;
+}
+
+.custom-textarea{
+    border: 1px solid rgb(100, 100, 100);
+    background-color: #1d1d24;
+    height: 200px;
+    font-size: 15px;
+    resize: none;
+}
+.custom-textarea:focus{
+    background-color: #1e1e24;
+}
+
+input + span{
+    font-size: 14px;
+}
+
+/*Selector de ID*/
+#ContinuarBtn{
+    background-color: #e9cf3e; 
+    color: black; 
+    font-weight: bold; 
+    border: none;
+}
+
+
+/*Selectores de estado*/
+#ContinuarBtn:hover{
+    background-color: #c0ab33;
+    transition: 0.2s;
+}
+
+#ContinuarBtn:active{
+    transform: scale(0.9);
+    transition: 0.2s;
+}
