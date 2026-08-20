@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
+    <title>Nutricional</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/general.css ">
     <link rel="stylesheet" href="css/dashboard.css ">
@@ -17,7 +17,7 @@
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <?php include('navbar.php'); ?>
+    <?php include('Visual/navbar.php'); ?>
 
     <div class="container-content mb-4 p-0">
     <?php
@@ -43,7 +43,7 @@
     <br>
     </div>
 
-    <?php include('footer.php'); ?>
+    <?php include('Visual/footer.php'); ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <script>
       var loggedIn;
