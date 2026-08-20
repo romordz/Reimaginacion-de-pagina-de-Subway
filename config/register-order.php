@@ -2,17 +2,8 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
+include('db.php');
 header('Content-Type: application/json');
-
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "abc123";
-$dbname = "login";
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if ($conn->connect_error) {
-    die("Connection error: " . $conn->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
