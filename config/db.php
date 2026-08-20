@@ -1,12 +1,13 @@
 <?php
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "abc123";
-$dbname = "login";
+$dbhost = getenv('MYSQLHOST') ?: 'localhost';
+$dbuser = getenv('MYSQLUSER') ?: 'root';
+$dbpass = getenv('MYSQLPASSWORD');
+$dbname = getenv('MYSQLDATABASE') ?: 'login';
+$dbport = getenv('MYSQLPORT') ?: 3306;
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname, $dbport);
 if($conn->connect_error)
 {
     die("connection error");
