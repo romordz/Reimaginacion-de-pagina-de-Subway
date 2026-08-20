@@ -20,70 +20,7 @@
 </head>
 <body>
     <!--Barra de navegación fijada arriba, color verde, texto blanco-->
-    <nav class="navbar fixed-top navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <div class="mx-2">
-              <a href="index.php">
-                <img src="content/Logos/Subway-logo.png" alt="" style="width:200px;">
-              </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-2"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
-              <div class="dropdown first">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Pedir a Domicilio
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.ubereats.com/mx/brand/subway"><img src="content/Logos/Uber.png" alt="" style="width:100px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.rappi.com.mx/monterrey/restaurantes/delivery/1017-subway"><img src="content/Logos/Rappi.png" alt="" style="width:60px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.didi-food.com/es-419/food/"><img src="content/Logos/DiDi.png" alt="" style="width:110px;"></a></li>
-                  </ul>
-              </div>
-              <div>
-              <a href="sucursales.php" class="btn tabs second">Restaurantes</a>
-
-              </div>
-              <div class="dropdown third">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Nutrición
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                      <li><h6 class="dropdown-header subtab-item-disabled" href="#">Datos de Nutrición</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalSandwich.php">Sandwiches</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalEnsalada.php">Ensaladas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalBebida.php">Bebidas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalExtra.php">Extras</a></li>
-                  </ul>
-              </div>
-              <div>
-                <a class="btn tabs" href="index.php#MENU">Ver Menú</a>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <div class="d-flex flex-row">
-                <div class="dropdown logged-user sixth">
-                    <button class="btn tabs username h-100 d-flex flex-row justify-content-center align-items-center text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="bi bi-caret-down-fill me-1" style="font-size:20px;"></i>
-                      <e id="MyUser"></e>
-                    </button> 
-                      <ul class="dropdown-menu subtab text-center">
-                          <li><a class="dropdown-item subtab-item text-wrap" href="create-card.php">Registrar tarjeta</a></li>
-                          <li><a class="dropdown-item subtab-item" href="user-info.php">Mi perfil</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item subtab-item" href="config/log-out.php">Cerrar Sesión</a></li>
-                      </ul>
-                </div>
-                <i class="bi bi-person-circle fs-1 logged-user"></i>
-              </div>
-                <a class="btn tabs seventh" href="log-in.php" style="margin: 7px 0px;" id="not-logged-user">
-                  Iniciar Sesión
-                </a>
-            </div>
-        </div>
-    </nav>
-
+    <?php include 'Visual/navbar.php'; ?>
 
     <div class="container-content m-0 p-0">
     <br>  <br> <br>
@@ -91,118 +28,20 @@
       <p class="fs-1 m-0 pub-title text-center">Información nutricional de Sandwiches</p>
     </div>
     <!--Contenido-->
-    <?php
-    include("config/nutricional/nutricionalSandwich.php");
-    ?>
+    <?php include 'config/nutricional/nutricionalSandwich.php';?>
     <br>
     </div>
     
     <!--Footer-->
-    <div class="container-fluid position-absolute footer py-3">
-      <div class="text-center">
-        <div class="my-3">
-          <a href="index.php"><img src="content/Logos/Subway-logo.png" alt="" style="width:200px;"></a>
-        </div>
-      </div>
-      <div class="mb-3">
-        <p class="mb-1 text-center"><strong>Pagina hecha por:</strong></p>
-        <div class="d-flex flex-row justify-content-center text-center">
-          <div class="info mx-3">
-            <p class="m-0"><strong>Nombre: </strong>Carlos Isaí Vera Moreno</p>
-            <p class="m-0"><strong>Matricula: </strong>1994070</p>
-          </div>
-          <div class="info mx-3">
-            <p class="m-0"><strong>Nombre: </strong>Ricardo Romo Rodriguez</p>
-            <p class="m-0"><strong>Matricula: </strong>2022931</p>
-          </div>
-        </div>
-      </div>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            <p class="mb-1 desc-title">Sobre Subway</p>
-            <p class="mb-1 info">Subway es una cadena internacional de restaurantes especializada en la elaboración de sándwiches y ensaladas personalizables</p>
-            <a href="#" class="m-0 info little-link">Nuestra Historia</a>
-            <br>
-            <a href="#" class="m-0 info little-link">Preguntas Frecuentes</a>
-          </div>
-          <div class="col">
-            <p class="mb-1 desc-title">Redes Sociales</p>
-            <p class="mb-1 info">¡Siguenos en nuestras redes sociales!</p>
-            <a href="https://www.facebook.com/SubwayMexico" class="info little-link">Facebook</a>
-            <br>
-            <a href="https://twitter.com/subwaymexico" class="info little-link">Twitter / X</a>
-            <br>
-            <a href="https://www.instagram.com/subwaymexico/" class="info little-link">Instagram</a>
-            <br>
-            <a href="https://www.youtube.com/channel/UC-R5RJKvdXaKQVdh-DuURZw" class="info little-link">Youtube</a>
-            <br>
-            <a href="https://www.tiktok.com/@subway" class="info little-link">TikTok</a>
-          </div>
-          <div class="col">
-            <p class="mb-1 desc-title">Legal</p>
-            <p class="m-0 info">SUBWAY® es una marca registrada de Subway IP LLC.</p>
-            <p class="m-0 info">© 2023-2024 Subway IP LLC.</p>
-            <p class="m-0 info">Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <br>
-        <p class="m-0 littleinfo">Esta es una pagina conceptual, no nos demanden :(</p>
-      </div>
-    </div>
+    <?php include 'Visual/footer.php'; ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
-
     <script>
       var loggedIn;
-
       $(document).ready(function(){
-        function fetchUserInfo(callback) {
-          $.ajax({
-              type: 'GET',
-              url: 'config/getUserInfo.php',
-              dataType: 'json',
-              success: function(response) {
-                  if (response.success) {
-                      var userInfo = response.user_info;
-                      content = userInfo.Nombre;
-                      isStarter = parseInt(userInfo.Starter, 10);
-                      $('#MyUser').html(content);
-
-                      if(callback){
-                        callback();
-                      }
-                  } else {
-                  }
-              }
-          });
-        }
-
-        function checkLoginStatus() {
-          $.ajax({
-              type: 'GET',
-              url: 'config/checkLogIn.php',
-              dataType: 'json',
-              success: function(response) {
-                  if (response.logged_in) {
-                      loggedIn = true;
-                      fetchUserInfo();
-                      
-                      $(".logged-user").show();
-                      $("#not-logged-user").hide();
-                      console.log('User is logged in');
-                  } else {
-                      loggedIn = false;
-                      $(".logged-user").hide();
-                      $("#not-logged-user").show();
-                      console.log('User is not logged in');
-                  }
-              }
-          });
-        }
         checkLoginStatus();
       });
     </script>
+    <script src="js/fetchUserInfo.js"></script>
+    <script src="js/checkLoginStatus.js"></script>
 </body>
 </html>
