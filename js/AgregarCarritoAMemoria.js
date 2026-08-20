@@ -1,3 +1,3 @@
-function AgregarCarritoAMemoria(){
-          localStorage.setItem('carrito', JSON.stringify(carrito))
-        }
+function AgregarCarritoAMemoria() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}

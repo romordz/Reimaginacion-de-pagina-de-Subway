@@ -61,6 +61,11 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <div class="d-flex flex-row">
                 <div class="dropdown logged-user sixth">
+                    <button class="btn tabs logged-user" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#ShoppingCart" aria-controls="ShoppingCart">
+                        <i class="bi bi-cart-fill fs-1"></i>
+                        <span id="ElementosCarrito" class="badge">0</span>
+                    </button>
                     <button
                         class="btn tabs username h-100 d-flex flex-row justify-content-center align-items-center text-center"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
