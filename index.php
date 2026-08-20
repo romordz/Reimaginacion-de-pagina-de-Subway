@@ -226,11 +226,9 @@
         <div class="d-flex flex-row justify-content-center text-center">
           <div class="info mx-3">
             <p class="m-0"><strong>Nombre: </strong>Carlos Isaí Vera Moreno</p>
-            <p class="m-0"><strong>Matricula: </strong>1994070</p>
           </div>
           <div class="info mx-3">
             <p class="m-0"><strong>Nombre: </strong>Ricardo Romo Rodriguez</p>
-            <p class="m-0"><strong>Matricula: </strong>2022931</p>
           </div>
         </div>
       </div>
