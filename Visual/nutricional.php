@@ -17,7 +17,7 @@
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <?php include 'Visual/navbar.php'; ?>
+    <?php include(__DIR__ . '/../Visual/navbar.php'); ?>
 
     <div class="container-content mb-4 p-0">
     <?php
@@ -43,7 +43,7 @@
     <br>
     </div>
 
-    <?php include 'Visual/footer.php'; ?>
+    <?php include(__DIR__ . '/../Visual/footer.php'); ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <script>
       var loggedIn;

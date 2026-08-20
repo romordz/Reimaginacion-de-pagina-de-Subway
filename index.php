@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principal</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/navbar.css ">
-    <link rel="stylesheet" href="css/footer.css ">
     <link rel="stylesheet" href="css/general.css ">
     <link rel="stylesheet" href="css/dashboard.css ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,74 +17,7 @@
 </head>
 <body>
     <!--Barra de navegación fijada arriba, color verde, texto blanco-->
-    <nav class="navbar fixed-top navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <div class="mx-2">
-              <a href="index.php">
-                <img src="content/Logos/Subway-logo.png" alt="" style="width:200px;">
-              </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-2"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
-              <div class="dropdown first">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Pedir a Domicilio
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.ubereats.com/mx/brand/subway"><img src="content/Logos/Uber.png" alt="" style="width:100px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.rappi.com.mx/monterrey/restaurantes/delivery/1017-subway"><img src="content/Logos/Rappi.png" alt="" style="width:60px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.didi-food.com/es-419/food/"><img src="content/Logos/DiDi.png" alt="" style="width:110px;"></a></li>
-                  </ul>
-              </div>
-              <div>
-              <a href="sucursales.php" class="btn tabs second">Restaurantes</a>
-              </div>
-              <div class="dropdown third">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Nutrición
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                      <li><h6 class="dropdown-header subtab-item-disabled" href="#">Datos de Nutrición</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalSandwich.php">Sandwiches</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalEnsalada.php">Ensaladas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalBebida.php">Bebidas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalExtra.php">Extras</a></li>
-                  </ul>
-              </div>
-              <div>
-                <a class="btn tabs" href="index.php#MENU">Ver Menú</a>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <div class="d-flex flex-row">
-                <div>
-                  <button class="btn rounded-pill tabs fifth logged-user" type="button" data-bs-toggle="offcanvas" data-bs-target="#ShoppingCart" aria-controls="offcanvasWithBothOptions">
-                    <span id="ElementosCarrito">0</span>
-                    <i class="bi bi-cart2 fs-3"></i>
-                  </button>
-                </div>
-                <div class="dropdown logged-user sixth">
-                    <button class="btn tabs username h-100 d-flex flex-row justify-content-center align-items-center text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="bi bi-caret-down-fill me-1" style="font-size:20px;"></i>
-                      <e id="MyUser"></e>
-                    </button> 
-                      <ul class="dropdown-menu subtab text-center">
-                          <li><a class="dropdown-item subtab-item text-wrap" href="create-card.php">Registrar tarjeta</a></li>
-                          <li><a class="dropdown-item subtab-item" href="user-info.php">Mi perfil</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item subtab-item" href="config/log-out.php">Cerrar Sesión</a></li>
-                      </ul>
-                </div>
-                <i class="bi bi-person-circle fs-1 logged-user"></i>
-              </div>
-                <a class="btn tabs seventh" href="log-in.php" style="margin: 7px 0px;" id="not-logged-user">
-                  Iniciar Sesión
-                </a>
-            </div>
-        </div>
-    </nav>
+    <?php include(__DIR__ . '/../Visual/navbar.php'); ?>
 
     <!--Contenido-->
     <div class="p-0 m-0" style="height:91px; background-color:#015d34;">
@@ -215,7 +146,7 @@
     </div>
     
     <!--Footer-->
-    <?php include 'Visual/footer.php'; ?>
+    <?php include(__DIR__ . '/../Visual/footer.php'); ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
 
     <script>
