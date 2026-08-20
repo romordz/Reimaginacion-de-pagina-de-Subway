@@ -1,4 +1,6 @@
 <?php
+include('db.php');
+header('Content-Type: application/json');
 session_start();
 
 // Checar si usuario esta en sesion
@@ -6,17 +8,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['Nombre'])) {
     // Usuario esta en sesion
     $id =  $_SESSION['id'];
 
-    header('Content-Type: application/json');
 
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "abc123";
-    $dbname = "login";
 
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-    if ($conn->connect_error) {
-        die("Connection error: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM `credit-cards` WHERE id_user = '$id'";
     $result = $conn->query($sql);
