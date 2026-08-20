@@ -38,18 +38,6 @@ function AgregarElementosDeCarritoHTML() {
   });
   var iva = (subTotal / 100) * 16;
   precioTotal = subTotal + iva;
-  console.log(carrito);
-  console.log(
-    "subtotal: " +
-      subTotal +
-      "\n" +
-      "IVA: " +
-      iva +
-      "\n" +
-      "TOTAL: " +
-      precioTotal +
-      "\n",
-  );
   $("#ElementosCarrito").text(CantidadProductos);
   $("#total-price").text(precioTotal);
   $("#ProductList").html(content);

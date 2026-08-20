@@ -23,7 +23,6 @@ function addToCart(Product){
           }else{
             carrito[IndiceDeProductoYaExistente].Cantidad = carrito[IndiceDeProductoYaExistente].Cantidad + 1;
           }
-          console.log(carrito);
           AgregarElementosDeCarritoHTML();
           AgregarCarritoAMemoria();
         }

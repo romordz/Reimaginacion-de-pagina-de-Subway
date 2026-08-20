@@ -278,193 +278,11 @@
       var precioTotal = 0;
 
       $(document).ready(function(){
-      
-        function fetchUserInfo(callback) {
-          $.ajax({
-              type: 'GET',
-              url: 'config/getUserInfo.php',
-              dataType: 'json',
-              success: function(response) {
-                  if (response.success) {
-                      var userInfo = response.user_info;
-                      content = userInfo.Nombre;
-                      isStarter = parseInt(userInfo.Starter, 10);
-                      $('#MyUser').html(content);
-
-                      if(callback){
-                        callback();
-                      }
-                  } else {
-                  }
-              },
-              error: function(xhr, status, error) {
-                  console.error('Error fetching user information:', status, error);
-              }
-          });
-        }
-
-        function checkLoginStatus() {
-          $.ajax({
-              type: 'GET',
-              url: 'config/checkLogIn.php',
-              dataType: 'json',
-              success: function(response) {
-                  if (response.logged_in) {
-                      // User is logged in
-                      loggedIn = true;
-                      fetchUserInfo(doOnboarding);
-                      
-                      $(".logged-user").show();
-                      $("#not-logged-user").hide();
-                      console.log('User is logged in');
-                  } else {
-                      // User is not logged in
-                      loggedIn = false;
-                      doOnboarding();
-                      $(".logged-user").hide();
-                      $("#not-logged-user").show();
-                      console.log('User is not logged in');
-                  }
-              },
-              error: function(xhr, status, error) {
-                  console.error('Error checking login status:', status, error);
-              }
-          });
-        }
-
-        function doOnboarding(){
-          if (loggedIn) {
-                if (isStarter) {
-                    introJs().setOptions({
-                        nextLabel: 'Siguiente',
-                        prevLabel: 'Anterior',
-                        doneLabel: 'Listo',
-                        steps: [{
-                                tooltipClass: 'customTooltip',
-                                intro: '¡Bienvenido a la pagina de Subway México!'
-                            },
-                            {
-                                element: document.querySelector('.first'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Pedir a Domicilio',
-                                intro: 'Aqui podras pedir a domicilio a través de la aplicación de tu elección'
-                            },
-                            {
-                                element: document.querySelector('.second'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Sucursales',
-                                intro: 'Aqui podras ver todas nuestras sucursales en México'
-                            },
-                            {
-                                element: document.querySelector('.third'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Datos de Nutrición',
-                                intro: 'Aqui podras pedir ver los datos de nutrición sobre nuestros productos'
-                            },
-                            {
-                                tooltipClass: 'customTooltip',
-                                title: 'Recoger pedido en sucursal',
-                                intro: '¿Planeas comer en una sucursal, pero no quieres tener que esperar en grandes filas?<br><br>¡No hay problema!'
-                            },
-                            {
-                                element: document.querySelector('.fourth'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Menú',
-                                intro: 'Puedes navegar nuestro menú dando click a las pestañas y agregar productos al carrito',
-                                position: 'bottom'
-                            },
-                            {
-                                element: document.querySelector('.fifth'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Carrito y completar pedido',
-                                intro: 'Todos los productos agregados al carrito seran preparados en la sucursal de tu elección'
-                            },
-                            {
-                                element: document.querySelector('.sixth'),
-                                tooltipClass: 'customTooltip',
-                                title: 'Tu información',
-                                intro: 'Podras checar tu información y agregar formas de pago aqui'
-                            }
-                        ]
-                    }).start();
-
-                    $.ajax({
-                      url: 'config/updateStarter.php',
-                      type: 'POST',
-                      data: { Starter: 0},
-                      dataType: 'json',
-                      success: function(response) {
-                        console.log(response.message);
-                      },
-                      error: function(xhr, status, error) {
-                          console.error('Error updating variable:', status, error);
-                      }
-                  });
-                }
-                displayOrderContent();
-            } else {
-                introJs().setOptions({
-                  doneLabel: 'Okay',
-                  dontShowAgainLabel: "No mostrar de nuevo",
-                    steps: [{
-                        tooltipClass: 'customTooltip',
-                        element: document.querySelector('.seventh'),
-                        title: 'Iniciar Sesión',
-                        intro: 'Inicia sesión o crea una cuenta para obtener acceso completo a la pagina',
-                        position: 'left'
-                    }]
-                }).setOption("dontShowAgain", true).start();
-            }
-        }
-
         checkLoginStatus();
 
         if(localStorage.getItem('carrito')){
           carrito = JSON.parse(localStorage.getItem('carrito'));
           AgregarElementosDeCarritoHTML();
-        }
-        
-        function displayOrderContent(){
-          $.ajax({
-            url: 'config/getUserCards.php',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                var content = '';
-                if(data.length <= 0){
-                  content += '<div class = "mb-2 mt-1 text-center"><h5 style="color: red;">No has registrado una forma de pago</h5><h5 style="color: white;">Registrala aqui</h5></div>';
-                  content += '<a href="create-card.php" class="btn other-tabs mb-4 mx-3" style="background-color:#ffffff; color:black; margin-bottom:0px !important;">Registrar tarjeta</a>';
-                  content += '<div class = "mb-2 mt-1 text-center" style="color: white;"><p style="margin: 0px; padding: 0px;">No te preocupes, tu carrito se guardara :)</p></div>';
-                  $('#credit-title').text('');
-                  $('#select-card').hide();
-                  $('#Cont-TerminarPedido').html(content);
-                }
-                else{
-                  $.each(data, function(index, item) {
-                      content += '<option value="' + item.id_card + '">' + item.Nombre + ' ' + item.Numero.substring(0, 4) + '-' + item.Numero.substring(4, 8) + '-' + item.Numero.substring(8, 12) + '-' + item.Numero.substring(12, 16) + '</option>';
-                  });
-                  $('#select-card').html(content);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-          });
-          $.ajax({
-            url: 'config/getLocals.php',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                var content = '';
-                $.each(data, function(index, item) {
-                    content += '<option value="' + item.id_local + '">' + item.Direccion + '</option>';
-                });
-                $('#select-local').html(content);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-          });
         }
 
         //Sandwiches
@@ -673,92 +491,6 @@
 
         });
 
-        function RegisterOrder(selectedLocalValue, selectedCardValue){
-          var OrderData = {
-            LocalID: selectedLocalValue, 
-            CardID: selectedCardValue,
-            PrecioTotal: precioTotal
-          };
-
-          formData = JSON.stringify(OrderData);
-
-          $.ajax({
-            type: 'POST',
-            url: 'config/register-order.php',
-            data: {OrderData: formData},
-            dataType: 'json',
-            success: function(response) {
-                if (response.success) {
-                  console.log('si jalo');
-                  RegisterProductList(response.OrderID);
-                } else {
-                  //$('#Error').text(response.message);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-          });
-        }
-
-        function RegisterProductList(OrderID){
-          $.each(carrito, function(index, item) {
-            //...item agrega los elementos del JSON item al JSON temporal para no tener que modificar el original
-            var tempJSON = {
-              ...item,
-              OrderID: OrderID
-            }
-            var productoInfo = JSON.stringify(tempJSON);
-            $.ajax({
-              type: 'POST',
-              url: 'config/register-productList.php',
-              data: {ProductoInfo: productoInfo},
-              dataType: 'json',
-              success: function(response) {
-                  if (response.success) {
-                    $('#Error').text('');
-                    const toastLiveExample = document.getElementById('liveToast')
-                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                    toastBootstrap.show()
-                  } else {
-                    $('#Error').text(response.message);
-                  }
-              },
-              error: function(xhr, status, error) {
-                  console.error(xhr.responseText);
-              }
-            });
-          });
-          carrito = [];
-          UpdateProductosPop();
-          AgregarElementosDeCarritoHTML();
-          AgregarCarritoAMemoria();
-        }
-
-        function FindElementsFromParent(parentDiv){
-          var id_product = parentDiv.data('id');
-          console.log('Product ID:', id_product);
-          
-          var Titulo = parentDiv.find('.pub-title').text();
-          
-          var Descripcion = parentDiv.find('.pub-desc').text();
-          
-          var PrecioTexto = parentDiv.find('.price').text();
-          var Precio = parseFloat(PrecioTexto.replace('$', '').trim());
-
-          var Imagen = parentDiv.find('.card-img-top').attr('src');
-
-          var Product = 
-          {
-            id_product: id_product,
-            Titulo: Titulo,
-            Descripcion: Descripcion,
-            Precio: Precio,
-            Imagen: Imagen,
-          }
-          return Product;
-        }
-
         $("#Sandwiches-btn").click(function() {
                 $(".Ensaladas, .Bebidas, .Extras, #salad-container, #drink-container, #extra-container").hide();
                 $(".Sandwiches, #sandwich-container").fadeIn(400);
@@ -781,6 +513,13 @@
         });
     </script>
     <script src="js/UpdateProductosPop.js"></script>
+    <script src="js/fetchUserInfo.js"></script>
+    <script src="js/checkLoginStatus.js"></script>
+    <script src="js/doOnboarding.js"></script>
+    <script src="js/displayOrderContent.js"></script>
+    <script src="js/RegisterOrder.js"></script>
+    <script src="js/RegisterProductList.js"></script>
+    <script src="js/FindElementsFromParent.js"></script>
     <script src="js/AgregarElementosDeCarritoHTML.js"></script>
     <script src="js/addToCart.js"></script>
     <script src="js/AgregarCarritoAMemoria.js"></script>
