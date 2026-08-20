@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $query = "INSERT INTO `credit-cards` (id_user, Nombre, Numero, FechaExpiracion, CVV) VALUES ('$id_usuario', '$nombre', '$numero', '$fechaExp', '$CVV')";
 
               // Ejecutar la consulta
-              if (mysqli_query($conn, $query)) {
+              if (mysqli_query($conn, $query)) {    
                   $response = array('message' => '', 'success' => true);
               } else {
                 $Error = "Error al registrar el usuario: " . mysqli_error($conn);

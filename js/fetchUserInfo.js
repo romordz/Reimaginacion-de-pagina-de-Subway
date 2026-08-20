@@ -8,8 +8,8 @@ function fetchUserInfo(callback) {
         var userInfo = response.user_info;
         content = userInfo.Nombre;
         isStarter = parseInt(userInfo.Starter, 10);
+        id = userInfo.id;
         $("#MyUser").html(content);
-
         if (callback) {
           callback();
         }

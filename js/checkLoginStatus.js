@@ -1,5 +1,3 @@
-
-
 function checkLoginStatus() {
   $.ajax({
     type: "GET",
