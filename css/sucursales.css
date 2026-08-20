@@ -1,0 +1,48 @@
+ body {
+            background-color: #d3a142;
+            font-family: 'Karla', 'Roboto Slab';
+        }
+        .container-content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sucursal {
+            background-color: #014d2a;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 0 auto;
+        }
+        .sucursal:hover {
+            transform: scale(1.05);
+        }
+        h1, p {
+            color: #dadedf;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Roboto Slab';
+        }
+        p{
+          font-weight: 400;
+          font-size: 25px;
+        }
+        .btn-google-maps {
+            background-color: #ffbb00;
+            font-weight: bold;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn-google-maps:hover {
+            background-color: #ffca28;
+        }
