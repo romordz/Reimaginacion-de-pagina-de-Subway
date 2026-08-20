@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . '/../db.php');
+include('db.php');
 
 $sql = "SELECT * FROM products WHERE Tipo = ?";
 $stmt = $conn->prepare($sql);
