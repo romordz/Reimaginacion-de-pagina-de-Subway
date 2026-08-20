@@ -165,7 +165,7 @@
 
         //Sandwiches
         $.ajax({
-            url: 'config/getSandwichesProductos.php',
+            url: 'config/getProductos.php?tipo=Sandwich',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
@@ -198,7 +198,7 @@
         
         //Ensaladas
         $.ajax({
-            url: 'config/getEnsaladasProductos.php',
+            url: 'config/getProductos.php?tipo=Ensalada',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
@@ -231,7 +231,7 @@
 
         //Bebidas
         $.ajax({
-            url: 'config/getBebidasProductos.php',
+            url: 'config/getProductos.php?tipo=Bebida',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
@@ -264,7 +264,7 @@
 
         //Extras
         $.ajax({
-            url: 'config/getExtrasProductos.php',
+            url: 'config/getProductos.php?tipo=Extra',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
