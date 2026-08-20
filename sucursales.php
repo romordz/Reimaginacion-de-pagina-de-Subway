@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/footer.css ">
     <link rel="stylesheet" href="css/general.css ">
     <link rel="stylesheet" href="css/dashboard.css ">
+    <link rel="stylesheet" href="css/sucursales.css ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Madimi+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -16,59 +17,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
     <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/intro.min.js"></script>
     <script src="js/jquery.js"></script>
-    <style>
-        body {
-            background-color: #d3a142;
-            font-family: 'Karla', 'Roboto Slab';
-        }
-        .container-content {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .sucursal {
-            background-color: #014d2a;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            margin: 0 auto;
-        }
-        .sucursal:hover {
-            transform: scale(1.05);
-        }
-        h1, p {
-            color: #dadedf;
-            font-weight: bold;
-            text-align: center;
-            font-family: 'Roboto Slab';
-        }
-        p{
-          font-weight: 400;
-          font-size: 25px;
-        }
-        .btn-google-maps {
-            background-color: #ffbb00;
-            font-weight: bold;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-        .btn-google-maps:hover {
-            background-color: #ffca28;
-        }
-    </style>
 </head>
 <body>
-    <!--Barra de navegación fijada arriba, color verde, texto blanco-->
     <nav class="navbar fixed-top navbar-expand-lg custom-navbar">
         <div class="container-fluid">
             <div class="mx-2">
@@ -141,26 +91,13 @@
     </div>
     <!--Contenido-->
     <?php
-    // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "abc123";
-    $dbname = "login";
+    include('db.php');
+    header('Content-Type: application/json');
 
-    // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Consulta SQL para obtener los datos de los locales
     $sql = "SELECT * FROM locals";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Iterar sobre los resultados y mostrar los locales
         while($row = $result->fetch_assoc()) {
             $direccion = $row["Direccion"];
             $telefono = $row["Telefono"];
@@ -185,8 +122,6 @@
     } else {
         echo "No se encontraron resultados.";
     }
-
-    $conn->close();
     ?>
     <br>
     </div>
