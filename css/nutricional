@@ -1,0 +1,47 @@
+body {
+  background-color: #d3a142;
+  font-family: "Karla", "Roboto Slab";
+}
+.nutrition-info {
+  list-style: none;
+  padding: 0;
+}
+.nutrition-info li {
+  margin-bottom: 10px;
+}
+.food-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.product {
+  background-color: #014d2a;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product:hover {
+  transform: scale(1.05);
+}
+.food-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1,
+.nutrition-info li {
+  font-family: "Roboto Slab";
+  color: #dadedf;
+}
+h1 {
+  font-size: 50px;
+}
+.nutrition-info {
+  font-size: 18px;
+}
