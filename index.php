@@ -779,79 +779,10 @@
                 $(".Extras, #extra-container").fadeIn(400);
                 $('#product-type').text('Extras');
         });
-
-        function AgregarElementosDeCarritoHTML() {
-            var content = '';
-            var CantidadProductos = 0;
-            var subTotal = 0;
-            if(carrito.length <= 0){
-              $('#Error').text('No hay productos en el carrito');
-            }
-            else{
-              $('#Error').text('');
-            }
-            $.each(carrito, function(index, item) {
-              CantidadProductos = CantidadProductos + item.Cantidad;
-              subTotal = subTotal + (item.Precio * item.Cantidad);
-              content += '<div class="card card-container text-center mb-2 Producto" data-id = "' + item.id_product + '">';
-              content += '  <div class="card-body pb-1">';
-              content += '    <img src="' + item.Imagen + '" class="card-img-top rounded-bottom" alt="...">';
-              content += '    <h3 class="mb-1 mt-3 pub-title">' + item.Titulo + '</h3>';
-              content += '    <div>';
-              content += '      <p class="m-0 p-0 price">$' + item.Precio + '.00</p>';
-              content += '    </div>';
-              content += '      <p class="m-0" style="font-size:20px;">Cantidad</p>';
-              content += '    <div class="d-flex flex-row justify-content-center align-items-center m-0">';
-              content += '      <button class="btn me-1 agregar-quitar" Title="quitar"><i class="bi bi-dash-circle-fill"></i></button>';
-              content += '        <p class="m-0 cantidad-producto">' + item.Cantidad + '</p>';
-              content += '      <button class="btn ms-1 agregar-quitar" Title="agregar"><i class="bi bi-plus-circle-fill"></i></button>';
-              content += '    </div>';
-              content += '  </div>';
-              content += '</div>';
-            });
-            var iva = (subTotal/100) * 16;
-            precioTotal = subTotal + iva;
-            console.log(carrito);
-            console.log('subtotal: ' + subTotal + '\n' + 'IVA: ' + iva + '\n' + 'TOTAL: ' + precioTotal + '\n');
-          $('#ElementosCarrito').text(CantidadProductos);
-          $('#total-price').text(precioTotal);
-          $('#ProductList').html(content);
-        }
-
-        function addToCart(Product){
-          var IndiceDeProductoYaExistente = carrito.findIndex(function(value){
-            return value.id_product == Product.id_product;
-          });
-          if(carrito.length <= 0){
-            carrito = [{
-              id_product: Product.id_product,
-              Titulo: Product.Titulo,
-              Descripcion: Product.Descripcion,
-              Precio: Product.Precio,
-              Imagen: Product.Imagen,
-              Cantidad: 1
-            }]
-          }else if(IndiceDeProductoYaExistente < 0){
-            carrito.push({
-              id_product: Product.id_product,
-              Titulo: Product.Titulo,
-              Descripcion: Product.Descripcion,
-              Precio: Product.Precio,
-              Imagen: Product.Imagen,
-              Cantidad: 1
-            });
-          }else{
-            carrito[IndiceDeProductoYaExistente].Cantidad = carrito[IndiceDeProductoYaExistente].Cantidad + 1;
-          }
-          console.log(carrito);
-          AgregarElementosDeCarritoHTML();
-          AgregarCarritoAMemoria();
-        }
-
-        function AgregarCarritoAMemoria(){
-          localStorage.setItem('carrito', JSON.stringify(carrito))
-        }
     </script>
     <script src="js/UpdateProductosPop.js"></script>
+    <script src="js/AgregarElementosDeCarritoHTML.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/AgregarCarritoAMemoria.js"></script>
 </body>
 </html>
