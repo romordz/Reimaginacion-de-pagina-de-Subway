@@ -17,7 +17,7 @@
 </head>
 <body>
     <!--Barra de navegación fijada arriba, color verde, texto blanco-->
-    <?php include 'navbar.php'; ?>
+   <?php include 'visual/navbar.php'; ?>
 
     <!--Contenido-->
     <div class="p-0 m-0" style="height:91px; background-color:#015d34;">
@@ -146,7 +146,7 @@
     </div>
     
     <!--Footer-->
-    <?php include 'footer.php'; ?>
+    <?php include 'visual/footer.php'; ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
 
     <script>
