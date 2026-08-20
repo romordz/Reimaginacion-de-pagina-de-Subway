@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $numero = $_POST['Numero'];
             $fechaExp = $_POST['FechaExpiracion'];
             $CVV = $_POST['CVV'];
-            $id_usuario = $_POST['id'];
+            $id_usuario = $_SESSION['id'];
               $query = "INSERT INTO `credit-cards` (id_user, Nombre, Numero, FechaExpiracion, CVV) VALUES ('$id_usuario', '$nombre', '$numero', '$fechaExp', '$CVV')";
 
               // Ejecutar la consulta

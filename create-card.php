@@ -66,7 +66,6 @@
     <script src="js/checkLoginStatus.js"></script>
     <script>
         var loggedIn;
-        var id;
 
         $(document).ready(function () {
 
@@ -74,8 +73,6 @@
                 event.preventDefault();
 
                 var formData = $(this).serialize();
-
-                formData = formData + "&id=" + id;
 
                 $.ajax({
                     type: 'POST',
