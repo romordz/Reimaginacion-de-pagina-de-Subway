@@ -46,12 +46,12 @@
                 </button>
                 <ul class="dropdown-menu subtab text-center">
                     <li>
-                        <h6 class="dropdown-header subtab-item-disabled" href="#">Datos de Nutrición</a>
+                        <h6 class="dropdown-header subtab-item-disabled" href="#">Datos de Nutrición</h6>
                     </li>
-                    <li><a class="dropdown-item subtab-item" href="nutricionalSandwich.php">Sandwiches</a></li>
-                    <li><a class="dropdown-item subtab-item" href="nutricionalEnsalada.php">Ensaladas</a></li>
-                    <li><a class="dropdown-item subtab-item" href="nutricionalBebida.php">Bebidas</a></li>
-                    <li><a class="dropdown-item subtab-item" href="nutricionalExtra.php">Extras</a></li>
+                    <li><a class="dropdown-item subtab-item" href="nutricional.php?tipo=Sandwich">Sandwiches</a></li>
+                    <li><a class="dropdown-item subtab-item" href="nutricional.php?tipo=Ensalada">Ensaladas</a></li>
+                    <li><a class="dropdown-item subtab-item" href="nutricional.php?tipo=Bebida">Bebidas</a></li>
+                    <li><a class="dropdown-item subtab-item" href="nutricional.php?tipo=Extra">Extras</a></li>
                 </ul>
             </div>
             <div>

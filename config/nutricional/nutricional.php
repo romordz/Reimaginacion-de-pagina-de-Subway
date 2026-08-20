@@ -1,15 +1,16 @@
 <?php
-include('db.php');
+include(__DIR__ . '/../db.php');
 
-$sql = "SELECT * FROM products WHERE Tipo = 'Bebida'";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM products WHERE Tipo = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $tipo);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $nombre = $row["Nombre"];
-        $precio = $row["Precio"];
         $imagen = $row["Imagen"];
-        $descripcion = $row["Descripcion"];
         $calorias = $row["Calorias"];
         $grasas = $row["Grasas"];
         $grasas_saturadas = $row["GrasasSaturadas"];
@@ -20,7 +21,7 @@ if ($result->num_rows > 0) {
         ?>
         <div class="container mt-3">
             <div class="row">
-                <div class="col-md-8 offset-md-2 product">
+                <div class="col-md-10 offset-md-1 product">
                     <div class="row">
                         <div class="col-md-6">
                             <img src="<?php echo $imagen; ?>" alt="<?php echo $nombre; ?>" class="food-image img-fluid">
@@ -46,4 +47,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "No se encontraron resultados.";
 }
+
+$stmt->close();
 ?>
