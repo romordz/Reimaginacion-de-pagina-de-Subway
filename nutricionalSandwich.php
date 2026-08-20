@@ -22,7 +22,7 @@
     <!--Barra de navegación fijada arriba, color verde, texto blanco-->
     <?php include 'Visual/navbar.php'; ?>
 
-    <div class="container-content m-0 p-0">
+    <div class="container-content mb-4 p-0">
     <br>  <br> <br>
     <div class="topcontainer mt-3">
       <p class="fs-1 m-0 pub-title text-center">Información nutricional de Sandwiches</p>

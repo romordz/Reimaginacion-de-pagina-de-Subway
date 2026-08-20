@@ -1,6 +1,5 @@
 <?php
 include('db.php');
-header('Content-Type: application/json');
 
 $sql = "SELECT * FROM products WHERE Tipo = 'Extra'";
 $result = $conn->query($sql);
