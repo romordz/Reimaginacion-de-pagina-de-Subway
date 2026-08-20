@@ -258,7 +258,7 @@
         <p class="m-0 littleinfo">Esta es una pagina conceptual, no nos demanden :(</p>
       </div>
     </div>
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
 
     <script>
       var loggedIn;

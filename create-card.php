@@ -113,7 +113,7 @@
     </div>
 
     <!--Footer-->
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <script>
       var loggedIn;
       var id = -1;
