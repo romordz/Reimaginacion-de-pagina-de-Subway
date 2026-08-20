@@ -1,9 +1,8 @@
 <?php
 include('db.php');
-header('Content-Type: application/json');
 
 $sql = "SELECT * FROM locals";
-$stmt = $conn->query($sql);
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -31,5 +30,4 @@ if ($result->num_rows > 0) {
 } else {
     echo "No se encontraron resultados.";
 }
-$stmt->close();
 ?>

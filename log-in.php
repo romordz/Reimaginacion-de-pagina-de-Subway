@@ -16,50 +16,7 @@
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <div class="mx-2">
-              <a href="index.php"><img src="content/Logos/Subway-logo.png" alt="" style="width:200px;"></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-2"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
-              <div class="dropdown">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Pedir en App
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.ubereats.com/mx/brand/subway"><img src="content/Logos/Uber.png" alt="" style="width:100px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.rappi.com.mx/monterrey/restaurantes/delivery/1017-subway"><img src="content/Logos/Rappi.png" alt="" style="width:60px;"></a></li>
-                      <li><a class="dropdown-item subtab-item" style="margin-right: 55px;" href="https://www.didi-food.com/es-419/food/"><img src="content/Logos/DiDi.png" alt="" style="width:110px;"></a></li>
-                  </ul>
-              </div>
-              <div>
-                <button class="btn tabs">
-                  Restaurantes
-                </button>
-              </div>
-              <div class="dropdown">
-                <button class="btn tabs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Nutrición
-                </button>
-                  <ul class="dropdown-menu subtab text-center">
-                    <li><h6 class="dropdown-header subtab-item-disabled" href="#">Datos de Nutrición</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalSandwich.php">Sandwiches</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalEnsalada.php">Ensaladas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalBebida.php">Bebidas</a></li>
-                      <li><a class="dropdown-item subtab-item" href="nutricionalExtra.php">Extras</a></li>
-                  </ul>
-              </div>
-              <div>
-                <a class="btn tabs" href="index.php#MENU">Ver Menú</a>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            </div>
-        </div>
-    </nav>
+    <?php include 'Visual/navbar.php'; ?>
 
     <div class="d-flex text-center p-0 h-100">
         <div class="card login-card px-5 pb-2 m-auto">

@@ -17,7 +17,7 @@
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <?php include('../Visual/navbar.php'); ?>
+    <?php include('navbar.php'); ?>
 
     <div class="container-content mb-4 p-0">
     <?php
@@ -39,11 +39,11 @@
     <div class="topcontainer mt-3">
       <p class="fs-1 m-0 pub-title text-center">Información nutricional de <?php echo $tituloMostrado; ?></p>
     </div>
-    <?php include 'config/nutricional/nutricional.php'; ?>
+    <?php include 'config/nutricional.php'; ?>
     <br>
     </div>
 
-    <?php include('../Visual/footer.php'); ?>
+    <?php include('footer.php'); ?>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <script>
       var loggedIn;
