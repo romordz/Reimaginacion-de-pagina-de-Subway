@@ -2,7 +2,7 @@
 
 $dbhost = getenv('DB_HOST') ?: 'localhost';
 $dbuser = getenv('DB_USER') ?: 'root';
-$dbpass = getenv('DB_PASSWORD');
+$dbpass = getenv('DB_PASS');
 $dbname = getenv('DB_NAME') ?: 'login';
 $dbport = getenv('DB_PORT') ?: 3306;
 
