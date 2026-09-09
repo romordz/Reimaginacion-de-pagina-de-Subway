@@ -10,7 +10,7 @@ autenticación de usuarios y consulta de información nutricional.
 ## Stack
 - PHP
 - MySQL
-- Deploy en Railway
+- Deploy en Render y Aiven
 
 ## Features
 - Catálogo de productos por categoría (Sandwiches, Ensaladas, Bebidas, Extras)
